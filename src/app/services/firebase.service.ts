@@ -38,19 +38,25 @@ export class FirebaseService {
       .snapshotChanges();
   }
 
+  loginUser(value) {
+    return this.db
+      .collection('users', (ref) => ref)
+
+      .snapshotChanges();
+  }
+
   searchUsersByAge(value) {
     return this.db
       .collection('users', (ref) => ref.orderBy('age').startAt(value))
       .snapshotChanges();
   }
 
-  createUser(value, avatar) {
+  createUser(value) {
     return this.db.collection('users').add({
       name: value.name,
       nameToSearch: value.name.toLowerCase(),
-      surname: value.surname,
-      age: parseInt(value.age),
-      avatar: avatar,
+      email: value.email,
+      password: value.password,
     });
   }
 }

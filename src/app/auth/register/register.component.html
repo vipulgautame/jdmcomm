@@ -1,102 +1,48 @@
-<div class="create-page">
-  <nav aria-label="breadcrumb">
-    <ol class="breadcrumb">
-      <li class="breadcrumb-item active" aria-current="page">
-        REGISTER TO PORTAL
-      </li>
-    </ol>
-  </nav>
-  <div class="page-content">
-    <div class="mx-auto my-3" style="width: 400px">
-      <form
-        class="create-form"
-        [formGroup]="exampleForm"
-        novalidate
-        (ngSubmit)="onSubmit(exampleForm.value)"
-      >
+<h1 class="header">Create an account with Firebase or Social Providers</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <form [formGroup]="registerForm">
         <div class="form-group">
-          <mat-form-field class="input-style">
-            <mat-label>Enter name</mat-label>
-            <input
-              matInput
-              placeholder="Name"
-              class="form-control"
-              formControlName="name"
-            />
-          </mat-form-field>
-          <ng-container *ngFor="let validation of validation_messages.name">
-            <mat-error
-              *ngIf="
-                exampleForm.get('name').hasError(validation.type) &&
-                (exampleForm.get('name').dirty ||
-                  exampleForm.get('name').touched)
-              "
-            >
-              {{ validation.message }}</mat-error
-            >
-          </ng-container>
+          <label>Email address</label>
+          <input type="email" formControlName="email" class="form-control" />
         </div>
-
         <div class="form-group">
-          <mat-form-field class="input-style">
-            <input
-              matInput
-              placeholder="Surname"
-              class="form-control"
-              formControlName="surname"
-            />
-          </mat-form-field>
-          <ng-container *ngFor="let validation of validation_messages.surname">
-            <mat-error
-              *ngIf="
-                exampleForm.get('surname').hasError(validation.type) &&
-                (exampleForm.get('surname').dirty ||
-                  exampleForm.get('surname').touched)
-              "
-            >
-              {{ validation.message }}</mat-error
-            >
-          </ng-container>
+          <label>Password</label>
+          <input
+            type="password"
+            class="form-control"
+            formControlName="password"
+          />
+          <label class="error">{{ errorMessage }}</label>
+          <label class="success">{{ successMessage }}</label>
         </div>
-
-        <div class="form-group">
-          <mat-form-field class="input-style">
-            <input
-              matInput
-              type="number"
-              min="0"
-              max="100"
-              placeholder="Age"
-              class="form-control"
-              formControlName="age"
-            />
-          </mat-form-field>
-          <ng-container *ngFor="let validation of validation_messages.age">
-            <mat-error
-              *ngIf="
-                exampleForm.get('age').hasError(validation.type) &&
-                (exampleForm.get('age').dirty || exampleForm.get('age').touched)
-              "
-            >
-              {{ validation.message }}</mat-error
-            >
-          </ng-container>
-        </div>
-
-        <div class="row submit-button-container">
-          <div class="col-md-4">
-            <button
-              mat-raised-button
-              class="submit-button"
-              color="primary"
-              type="submit"
-              [disabled]="!exampleForm.valid"
-            >
-              Create
-            </button>
-          </div>
-        </div>
+        <button
+          type="submit"
+          (click)="tryRegister(registerForm.value)"
+          class="btn btn-default"
+        >
+          Register
+        </button>
       </form>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4 col-md-offset-4">
+      <button
+        type="button"
+        class="btn btn-danger btn-block"
+        (click)="tryGoogleLogin()"
+      >
+        Register with Google
+      </button>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4 col-md-offset-4">
+      <p>Already have an account? <a href="login">Login</a></p>
     </div>
   </div>
 </div>

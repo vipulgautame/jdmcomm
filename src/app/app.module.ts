@@ -1,10 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
-import { AngularMaterialModule } from './material.module';
+import { AngularFireAuthModule } from '@angular/fire/auth';
 import { MatFormFieldModule } from '@angular/material/form-field';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -16,6 +15,11 @@ import { Carousel2Component } from './carousel2/carousel2.component';
 import { AuthModule } from './auth/auth.module';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AuthService } from './services/auth.service';
+import { UserService } from './services/user.service';
+import { AuthGuard } from './services/auth.guard';
+import { UserResolver } from './user/user.resolver';
+import { UserComponent } from './user/user.component';
 
 @NgModule({
   declarations: [
@@ -23,10 +27,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HeaderComponent,
     Carousel1Component,
     Carousel2Component,
+    UserComponent,
   ],
   imports: [
+    AngularFireAuthModule,
     MatFormFieldModule,
-    AngularMaterialModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     ReactiveFormsModule,
@@ -36,7 +41,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FormsModule,
     BrowserAnimationsModule,
   ],
-  providers: [],
+  providers: [AuthService, UserService, UserResolver, AuthGuard],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
