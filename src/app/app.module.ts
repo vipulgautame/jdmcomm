@@ -5,6 +5,7 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatButtonModule } from '@angular/material/button';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -32,6 +33,7 @@ import { UserComponent } from './user/user.component';
   imports: [
     AngularFireAuthModule,
     MatFormFieldModule,
+    MatButtonModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     ReactiveFormsModule,
@@ -41,7 +43,15 @@ import { UserComponent } from './user/user.component';
     FormsModule,
     BrowserAnimationsModule,
   ],
-  providers: [AuthService, UserService, UserResolver, AuthGuard],
+
+  providers: [
+    MatFormFieldModule,
+    MatButtonModule,
+    AuthService,
+    UserService,
+    UserResolver,
+    AuthGuard,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -9,7 +9,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   </head>
   <body>
-    <div class="container-fluid" style="background-color: rgb(255, 255, 255)">
+    <div class="container-fluid">
       <div class="jumbotron mh-10">
         <h1>JDM COMMUNITY PORTAL</h1>
         <h4 class="text-muted">Its all about japanese cars</h4>
@@ -18,17 +18,27 @@
       <app-header></app-header>
 
       <div class="row">
-        <div class="col-sm-2">
-          <button type="button" class="btn btn-dark btn-block">donate</button>
-          <button type="button" class="btn btn-dark btn-block">
-            membership
-          </button>
-          <button type="button" class="btn btn-dark btn-block">email us</button>
-          <button type="button" class="btn btn-dark btn-block">facebook</button>
-          <button type="button" class="btn btn-dark btn-block">
-            instagram
-          </button>
-          <button type="button" class="btn btn-dark btn-block">youtube</button>
+        <div class="col-sm-2 p-3">
+          <div class="my-all-buttons">
+            <button mat-raised-button onClick="window.open('//paypal.com')">
+              Donate
+            </button>
+            <button mat-raised-button onClick="window.open('//google.com')">
+              XMembrshpX
+            </button>
+            <button mat-raised-button onClick="window.open('//gmail.com')">
+              Email Us
+            </button>
+            <button mat-raised-button onClick="window.open('//facebook.com')">
+              Facebook
+            </button>
+            <button mat-raised-button onClick="window.open('//instagram.com')">
+              Instagram
+            </button>
+            <button mat-raised-button onClick="window.open('//youtube.com')">
+              YouTube
+            </button>
+          </div>
         </div>
         <div class="col-sm-8">
           <router-outlet></router-outlet>
