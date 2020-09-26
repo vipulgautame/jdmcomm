@@ -6,7 +6,7 @@ import { environment } from '../environments/environment';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
-
+import { MaterialModule } from './material-module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -31,6 +31,7 @@ import { UserComponent } from './user/user.component';
     UserComponent,
   ],
   imports: [
+    MaterialModule,
     AngularFireAuthModule,
     MatFormFieldModule,
     MatButtonModule,
@@ -45,6 +46,7 @@ import { UserComponent } from './user/user.component';
   ],
 
   providers: [
+    MaterialModule,
     MatFormFieldModule,
     MatButtonModule,
     AuthService,
