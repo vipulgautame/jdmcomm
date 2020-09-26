@@ -5,6 +5,10 @@ import { UserService } from '../services/user.service';
 import { FirebaseUserModel } from '../services/user.model';
 import { AuthService } from '../services/auth.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+interface Event {
+  value: string;
+  viewValue: string;
+}
 
 @Component({
   selector: 'page-user',
@@ -12,6 +16,15 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['user.component.css'],
 })
 export class UserComponent implements OnInit {
+  events: Event[] = [
+    { value: 'car-meet', viewValue: 'Car meet' },
+    { value: 'track-day', viewValue: 'Track day' },
+    { value: 'drag-event', viewValue: 'Drag races' },
+    { value: 'car-show', viewValue: 'Car show' },
+    { value: 'charity-auction', viewValue: 'Charity auction' },
+    { value: 'night-ride', viewValue: 'Night ride' },
+  ];
+
   minDate: Date;
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
@@ -68,6 +81,15 @@ export class UserComponent implements OnInit {
       },
       (err) => console.log(err)
     );
+  }
+
+  hostEventToggle() {
+    var x = document.getElementById('eventStepper');
+    if (x.style.display === 'none') {
+      x.style.display = 'block';
+    } else {
+      x.style.display = 'none';
+    }
   }
 
   logout() {

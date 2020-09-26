@@ -1,0 +1,10 @@
+.mat-card {
+  margin: 20px;
+  padding: 20px;
+}
+
+.ten_chars {
+  width: 9ch;
+  overflow: hidden;
+  white-space: nowrap;
+}

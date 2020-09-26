@@ -1,0 +1,13 @@
+<mat-card>
+    <mat-selection-list #events [multiple]="false">
+        <mat-list-option *ngFor="let event of allEvents" [value]="event">
+            <h5>
+                {{ event.payload.doc.data().eventType }} ||
+                {{ event.payload.doc.data().audienceCapacity }} ||
+                {{ event.payload.doc.data().address }} ||
+            </h5>
+            <a class="ten_chars">{{ event.payload.doc.data().date }}</a>
+
+        </mat-list-option>
+    </mat-selection-list>
+</mat-card>
