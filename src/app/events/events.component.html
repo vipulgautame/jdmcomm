@@ -6,7 +6,7 @@
                 {{ event.payload.doc.data().audienceCapacity }} ||
                 {{ event.payload.doc.data().address }} ||
             </h5>
-            <a class="ten_chars">{{ event.payload.doc.data().date }}</a>
+            <a>{{ event.payload.doc.data().date | date:'dd-MMM-yyyy' }}</a>
 
         </mat-list-option>
     </mat-selection-list>

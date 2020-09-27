@@ -1,10 +1,10 @@
 .mat-raised-button {
-  margin-top: 0.1cm;
+  margin-top: 0.2cm;
   width: 100%;
 }
 
-.mat-stepper-horizontal {
-  margin-top: 8px;
+.mat-card {
+  margin-top: 0.2cm;
 }
 
 .mat-form-field {

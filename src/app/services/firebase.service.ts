@@ -59,4 +59,13 @@ export class FirebaseService {
       password: value.password,
     });
   }
+
+  createEvent(value) {
+    return this.db.collection('events').add({
+      eventType: value.typeFormCtrl,
+      date: value.dateFormCtrl,
+      audienceCapacity: value.capacityFormCtrl,
+      address: value.addressFormCtrl,
+    });
+  }
 }

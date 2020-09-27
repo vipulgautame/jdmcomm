@@ -1,10 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { UserService } from '../services/user.service';
-import { FirebaseUserModel } from '../services/user.model';
 import { AuthService } from '../services/auth.service';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {
+  FormBuilder,
+  FormGroup,
+  Validators,
+  FormControl,
+} from '@angular/forms';
+import { FirebaseService } from '../services/firebase.service';
 interface Event {
   value: string;
   viewValue: string;
@@ -16,6 +21,8 @@ interface Event {
   styleUrls: ['user.component.css'],
 })
 export class UserComponent implements OnInit {
+  formGroup: FormGroup;
+
   events: Event[] = [
     { value: 'car-meet', viewValue: 'Car meet' },
     { value: 'track-day', viewValue: 'Track day' },
@@ -26,61 +33,25 @@ export class UserComponent implements OnInit {
   ];
 
   minDate: Date;
-  firstFormGroup: FormGroup;
-  secondFormGroup: FormGroup;
-  thirdFormGroup: FormGroup;
-  fourthFormGroup: FormGroup;
-
-  user: FirebaseUserModel = new FirebaseUserModel();
-  profileForm: FormGroup;
 
   constructor(
     public userService: UserService,
     public authService: AuthService,
-    private route: ActivatedRoute,
+    private router: Router,
     private location: Location,
-    private fb: FormBuilder,
-    private _formBuilder: FormBuilder
+    private _formBuilder: FormBuilder,
+    public firebaseService: FirebaseService
   ) {
     this.minDate = new Date();
   }
 
   ngOnInit(): void {
-    this.firstFormGroup = this._formBuilder.group({
-      firstCtrl: ['', Validators.required],
+    this.formGroup = this._formBuilder.group({
+      typeFormCtrl: [''],
+      dateFormCtrl: [''],
+      capacityFormCtrl: [''],
+      addressFormCtrl: [''],
     });
-    this.secondFormGroup = this._formBuilder.group({
-      secondCtrl: ['', Validators.required],
-    });
-    this.thirdFormGroup = this._formBuilder.group({
-      thirdCtrl: [''],
-    });
-    this.fourthFormGroup = this._formBuilder.group({
-      fourthCtrl: ['', Validators.required],
-    });
-
-    this.route.data.subscribe((routeData) => {
-      let data = routeData['data'];
-      if (data) {
-        this.user = data;
-        this.createForm(this.user.name);
-      }
-    });
-  }
-
-  createForm(name) {
-    this.profileForm = this.fb.group({
-      name: [name, Validators.required],
-    });
-  }
-
-  save(value) {
-    this.userService.updateCurrentUser(value).then(
-      (res) => {
-        console.log(res);
-      },
-      (err) => console.log(err)
-    );
   }
 
   hostEventToggle() {
@@ -101,5 +72,21 @@ export class UserComponent implements OnInit {
         console.log('Logout error', error);
       }
     );
+  }
+
+  resetFields() {
+    this.formGroup = this._formBuilder.group({
+      typeFormCtrl: new FormControl('', Validators.required),
+      dateFormCtrl: new FormControl('', Validators.required),
+      capacityFormCtrl: new FormControl('', Validators.required),
+      addressFormCtrl: new FormControl('', Validators.required),
+    });
+  }
+
+  onSubmit(value) {
+    this.firebaseService.createEvent(value).then((res) => {
+      this.resetFields();
+      this.router.navigate(['events']);
+    });
   }
 }
