@@ -1,13 +1,31 @@
 <mat-card>
-    <mat-selection-list #events [multiple]="false">
-        <mat-list-option *ngFor="let event of allEvents" [value]="event">
-            <h5>
-                {{ event.payload.doc.data().eventType }} ||
-                {{ event.payload.doc.data().audienceCapacity }} ||
-                {{ event.payload.doc.data().address }} ||
-            </h5>
-            <a>{{ event.payload.doc.data().date | date:'dd-MMM-yyyy' }}</a>
+    <div>
+        <table mat-table [dataSource]="allEvents">
 
-        </mat-list-option>
-    </mat-selection-list>
+            <ng-container matColumnDef="type" class="typeColumn">
+                <th mat-header-cell *matHeaderCellDef> Event Type </th>
+                <td mat-cell *matCellDef="let element"> {{element.payload.doc.data().eventType}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="date" class="dateColumn">
+                <th mat-header-cell *matHeaderCellDef> Date </th>
+                <td mat-cell *matCellDef="let element">
+                    {{element.payload.doc.data().date.toDate() | date:'dd LLLL yyyy'}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="capacity" class="capacityColumn">
+                <th mat-header-cell *matHeaderCellDef> Audience Capapcity </th>
+                <td mat-cell *matCellDef="let element"> {{element.payload.doc.data().audienceCapacity}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="address" class="addressColumn">
+                <th mat-header-cell *matHeaderCellDef> Address </th>
+                <td mat-cell *matCellDef="let element"> {{element.payload.doc.data().address}} </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+    </div>
+
 </mat-card>

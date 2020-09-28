@@ -7,6 +7,8 @@ import { FirebaseService } from '../services/firebase.service';
   styleUrls: ['./events.component.css'],
 })
 export class EventsComponent implements OnInit {
+  displayedColumns = ['type', 'date', 'capacity', 'address'];
+
   allEvents: Array<any>;
   constructor(public firebaseService: FirebaseService) {}
   ngOnInit(): void {

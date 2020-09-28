@@ -21,6 +21,7 @@ interface Event {
   styleUrls: ['user.component.css'],
 })
 export class UserComponent implements OnInit {
+  formDate: Date;
   formGroup: FormGroup;
 
   events: Event[] = [

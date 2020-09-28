@@ -1,10 +1,26 @@
 .mat-card {
+  min-width: 100%;
+  max-width: inherit;
+}
+table {
+  border: none;
+  min-width: 100%;
+  max-width: inherit;
+  border-collapse: collapse;
+  display: block;
+  overflow: auto;
+}
+table td {
   margin: 20px;
   padding: 20px;
 }
-
-.ten_chars {
-  width: 9ch;
-  overflow: hidden;
-  white-space: nowrap;
+table td:first-child {
+  border-left: none;
+}
+table th {
+  margin: 20px;
+  padding: 20px;
+}
+table th:first-child {
+  border-left: none;
 }
