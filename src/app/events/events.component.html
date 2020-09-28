@@ -1,4 +1,7 @@
 <mat-card>
+    <h1 *ngIf="authService.user | async">
+        Welcome User: {{ (authService.user | async)?.email }}!
+    </h1>
     <div>
         <table mat-table [dataSource]="allEvents">
 

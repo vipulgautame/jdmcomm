@@ -1,12 +1,8 @@
-<div class="logout-button">
-  <button mat-raised-button (click)="logout()" style="margin-top: 20px;">Logout</button>
-</div>
-<div class="create-event-button">
-  <button mat-raised-button (click)="hostEventToggle()">Host an event</button>
-</div>
-
+<h1 *ngIf="authService.user | async">
+  Welcome {{ (authService.user | async)?.email }}!
+</h1>
 <mat-card>
-  <form [formGroup]="formGroup" (ngSubmit)="onSubmit(formGroup.value)">
+  <form [formGroup]="formGroup">
     <mat-form-field appearance="fill">
       <mat-label>Event type</mat-label>
       <mat-select formControlName="typeFormCtrl">
@@ -15,90 +11,25 @@
         </mat-option>
       </mat-select>
     </mat-form-field>
+    <br>
     <mat-form-field>
       <mat-label>Choose a Date</mat-label>
       <input matInput [min]="minDate" [matDatepicker]="picker" formControlName="dateFormCtrl" required />
       <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
       <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
+    <br>
     <mat-form-field>
       <mat-label>number of Audience</mat-label>
       <input matInput formControlName="capacityFormCtrl" placeholder="How many cars you can accomodate?"
         type="number" />
     </mat-form-field>
+    <br>
     <mat-form-field>
       <mat-label>Address</mat-label>
       <input matInput formControlName="addressFormCtrl" placeholder="Ex. 1 Main St, New York, NY" required />
     </mat-form-field>
-    <button type="submit">Submit</button>
+    <br>
   </form>
 </mat-card>
-<!--
-  <form [formGroup]="formGroup" (ngSubmit)="onSubmit(formGroup.value)">
-    <mat-vertical-stepper formArrayName="formArray" [linear]="false" id="eventStepper" style="display: none">
-      <mat-step formGroupName="0" [stepControl]="formArray?.get([0])">
-        <ng-template matStepLabel>Choose Event Type</ng-template>
-        <mat-form-field appearance="fill">
-          <mat-label>Event type</mat-label>
-          <mat-select formControlName="typeFormCtrl">
-            <mat-option *ngFor="let event of events" [value]="event.value" required>
-              {{ event.viewValue }}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
-        <div>
-          <button mat-button matStepperNext>Next</button>
-        </div>
-      </mat-step>
-      <!===============================DATE=======================================>
-
-        <mat-step formGroupName="1" [stepControl]="formArray?.get([1])">
-          <ng-template matStepLabel>
-            <div>Pick a date for event</div>
-          </ng-template>
-          <mat-form-field>
-            <mat-label>Choose a Date</mat-label>
-            <input matInput [min]="minDate" [matDatepicker]="picker" formControlName="dateFormCtrl" required />
-            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-            <mat-datepicker #picker></mat-datepicker>
-          </mat-form-field>
-          <div>
-            <button mat-button matStepperPrevious>Back</button>
-            <button mat-button matStepperNext>Next</button>
-          </div>
-        </mat-step>
-        <!=============================CAPACITY==========================================>
-
-          <mat-step formGroupName="2" [stepControl]="formArray?.get([2])">
-            <ng-template matStepLabel>
-              <div>Enter audience capacity</div>
-            </ng-template>
-            <mat-form-field>
-              <mat-label>number of Audience</mat-label>
-              <input matInput formControlName="capacityFormCtrl" placeholder="How many cars you can accomodate?"
-                type="number" />
-
-            </mat-form-field>
-            <div>
-              <button mat-button matStepperPrevious>Back</button>
-              <button mat-button matStepperNext>Next</button>
-            </div>
-          </mat-step>
-          <!=================================ADDRESS===================================>
-
-            <mat-step formGroupName="3" [stepControl]="formArray?.get([3])">
-              <ng-template matStepLabel>
-                <div>Enter address</div>
-              </ng-template>
-              <mat-form-field>
-                <mat-label>Address</mat-label>
-                <input matInput formControlName="addressFormCtrl" placeholder="Ex. 1 Main St, New York, NY" required />
-              </mat-form-field>
-              <div>
-                <button mat-button matStepperPrevious>Back</button>
-                <button type="submit">Host Your Eventt</button>
-              </div>
-            </mat-step>
-    </mat-vertical-stepper>
-  </form>
-  -->
+<button mat-raised-button (click)="onSubmit(formGroup.value)">Submit</button>

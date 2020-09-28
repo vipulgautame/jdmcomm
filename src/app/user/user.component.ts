@@ -55,15 +55,18 @@ export class UserComponent implements OnInit {
     });
   }
 
-  hostEventToggle() {
-    var x = document.getElementById('eventStepper');
+  /* hostEventToggle() {
+    var x = document.getElementById('eventForm');
+    var y = document.getElementById('eventFormButton');
     if (x.style.display === 'none') {
       x.style.display = 'block';
+      y.style.display = 'block';
     } else {
       x.style.display = 'none';
+      y.style.display = 'none';
     }
   }
-
+*/
   logout() {
     this.authService.doLogout().then(
       (res) => {

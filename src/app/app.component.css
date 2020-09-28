@@ -1,6 +1,6 @@
 .my-all-buttons .mat-raised-button {
   width: 100%;
-  margin-bottom: 20px;
+  margin: 5px;
 }
 .hero-image {
   background-image: url("car-meet-v2.jpg");

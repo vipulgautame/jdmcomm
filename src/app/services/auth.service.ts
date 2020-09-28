@@ -1,10 +1,14 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import * as firebase from 'firebase/app';
+import { Observable } from 'rxjs';
 
 @Injectable()
 export class AuthService {
-  constructor(public afAuth: AngularFireAuth) {}
+  user: Observable<firebase.User>;
+  constructor(public afAuth: AngularFireAuth) {
+    this.user = afAuth.authState;
+  }
 
   doGoogleLogin() {
     return new Promise<any>((resolve, reject) => {
