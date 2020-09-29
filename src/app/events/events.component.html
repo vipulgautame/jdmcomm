@@ -2,9 +2,40 @@
     <h1 *ngIf="authService.user | async">
         Welcome User: {{ (authService.user | async)?.email }}!
     </h1>
-    <div>
-        <table mat-table [dataSource]="allEvents">
+    <a *ngIf="authService.user | async">{{selectedEvent}}</a>
 
+    <table class="table table-hover table-dark" style="background-color: transparent;">
+        <thead>
+            <tr>
+                <th>
+                    type
+                </th>
+                <th>
+                    date
+
+                </th>
+                <th>
+                    capacity
+
+                </th>
+                <th>
+                    address
+
+                </th>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let u of allEvents; let i=index;" (click)="RowSelected(u);">
+                <td>{{u.payload.doc.data().eventType}}</td>
+                <td>{{u.payload.doc.data().date.toDate() | date:'dd LLLL yyyy'}}</td>
+                <td>{{u.payload.doc.data().audienceCapacity}}</td>
+                <td>{{u.payload.doc.data().address}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!--div>
+        <table mat-table [dataSource]="allEvents">
             <ng-container matColumnDef="type" class="typeColumn">
                 <th mat-header-cell *matHeaderCellDef> Event Type </th>
                 <td mat-cell *matCellDef="let element"> {{element.payload.doc.data().eventType}} </td>
@@ -25,10 +56,9 @@
                 <th mat-header-cell *matHeaderCellDef> Address </th>
                 <td mat-cell *matCellDef="let element"> {{element.payload.doc.data().address}} </td>
             </ng-container>
-
             <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
             <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
         </table>
-    </div>
+    </div-->
 
 </mat-card>
