@@ -22,6 +22,7 @@ import { AuthGuard } from './services/auth.guard';
 import { UserResolver } from './user/user.resolver';
 import { UserComponent } from './user/user.component';
 import { EventsComponent } from './events/events.component';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { EventsComponent } from './events/events.component';
     Carousel2Component,
     UserComponent,
     EventsComponent,
+    AboutComponent,
   ],
   imports: [
     MaterialModule,

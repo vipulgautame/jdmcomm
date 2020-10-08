@@ -1,3 +1,4 @@
+import { NONE_TYPE } from '@angular/compiler';
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 
@@ -38,6 +39,8 @@ export class FirebaseService {
       .snapshotChanges();
   }
 
+  addEventGuest(selectedEvent) {}
+
   loginUser(value) {
     return this.db
       .collection('users', (ref) => ref)
@@ -66,6 +69,7 @@ export class FirebaseService {
       date: value.dateFormCtrl,
       audienceCapacity: value.capacityFormCtrl,
       address: value.addressFormCtrl,
+      guestNames: ['NONE'],
     });
   }
 }

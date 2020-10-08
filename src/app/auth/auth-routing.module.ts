@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AboutComponent } from '../about/about.component';
 import { EventsComponent } from '../events/events.component';
 import { UserComponent } from '../user/user.component';
 import { LoginComponent } from './login/login.component';
@@ -8,6 +9,7 @@ import { ResetPasswordComponent } from './reset-password/reset-password.componen
 
 const routes: Routes = [
   { path: 'events', component: EventsComponent },
+  { path: 'about', component: AboutComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'reset-password', component: ResetPasswordComponent },

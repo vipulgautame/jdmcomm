@@ -52,6 +52,7 @@ export class UserComponent implements OnInit {
       dateFormCtrl: [''],
       capacityFormCtrl: [''],
       addressFormCtrl: [''],
+      guestNames: [''],
     });
   }
 

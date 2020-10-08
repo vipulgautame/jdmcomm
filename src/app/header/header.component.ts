@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../services/auth.service';
-import { Location } from '@angular/common';
 import { Router } from '@angular/router';
 
 @Component({
@@ -17,5 +16,6 @@ export class HeaderComponent implements OnInit {
     this.authService.doLogout().then((error) => {
       console.log('Logout error', error);
     });
+    this.router.navigate(['login']);
   }
 }

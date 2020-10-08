@@ -1,32 +1,34 @@
+body {
+  min-height: 101vh;
+}
 .my-all-buttons .mat-raised-button {
   width: 100%;
   margin: 5px;
 }
 .hero-image {
-  background-image: url("car-meet-v2.jpg");
+  background-image: url("car-meet-wide.jpg");
   background-color: #cccccc;
   height: 200px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-  margin-top: 20px;
 }
 
 .hero-text {
   text-align: center;
   text-shadow: 5px 5px 4px #444444;
-  margin: 20px;
   position: relative;
   color: rgb(255, 255, 255);
 }
-
-.websiteName {
-  padding-top: 50px;
-  line-height: 0.8;
-  font-size: 35px;
-  color: rgb(255, 255, 255);
+.webLogo {
+  max-width: 200px;
+  padding: 0px;
 }
-mat-card {
-  height: 100%;
+.websiteName {
+  padding-top: 30px;
+  line-height: 0.8;
+  font-size: 30px;
+  color: white;
+  text-shadow: 2px 2px 2px black;
 }
