@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AboutComponent } from '../about/about.component';
+import { ChatComponent } from '../chat/chat.component';
 import { EventsComponent } from '../events/events.component';
+import { AuthGuard } from '../services/auth.guard';
 import { UserComponent } from '../user/user.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
@@ -15,6 +17,7 @@ const routes: Routes = [
   { path: 'reset-password', component: ResetPasswordComponent },
   { path: 'page-user', component: UserComponent },
   { path: '', component: EventsComponent },
+  { path: 'chats/:id', component: ChatComponent, canActivate: [AuthGuard] }
 ];
 
 @NgModule({

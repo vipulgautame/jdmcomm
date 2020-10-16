@@ -22,6 +22,8 @@ export class EventsComponent implements OnInit {
   }
   RowSelected(u: any) {
     this.selectedEvent = u.payload.doc.id; // declare variable in component.
+    this.firebaseService.addEventGuest(this.selectedEvent);
+
   }
   getData() {
     this.firebaseService.getEvents().subscribe((result) => {
