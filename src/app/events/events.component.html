@@ -1,7 +1,6 @@
 <h1 *ngIf="authService.user | async">
     Welcome User: {{ (authService.user | async)?.email }}!
 </h1>
-<a *ngIf="authService.user | async">{{selectedEvent}}</a>
 <table class="table table-hover " style="background-color: transparent;">
     <thead>
         <tr>
@@ -10,36 +9,30 @@
             </th>
             <th>
                 date
-
             </th>
             <th>
                 capacity
-
             </th>
             <th>
                 address
-
             </th>
             <th>
                 guests
-
             </th>
             <th *ngIf="authService.user | async">
                 attend
             </th>
     </thead>
-
     <tbody>
         <tr *ngFor="let u of allEvents; let i=index;">
             <td>{{u.payload.doc.data().eventType}}</td>
             <td>{{u.payload.doc.data().date.toDate() | date:'dd LLLL yyyy'}}</td>
             <td>{{u.payload.doc.data().audienceCapacity}}</td>
             <td>{{u.payload.doc.data().address}}</td>
-            <td>{{u.payload.doc.data().guestNames}}</td>
+            <td>{{(u.payload.doc.data().guestNames.length)-1}}</td>
             <td *ngIf="authService.user | async">
                 <button mat-raised-button class="btn-primary" (click)="RowSelected(u);">go</button>
             </td>
-
         </tr>
     </tbody>
 </table>

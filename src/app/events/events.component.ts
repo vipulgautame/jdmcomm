@@ -11,7 +11,7 @@ import { FirebaseService } from '../services/firebase.service';
 export class EventsComponent implements OnInit {
   displayedColumns = ['type', 'date', 'capacity', 'address'];
   allEvents: Array<any>;
-  selectedEvent: any;
+  selectedEvent: any;        
 
   constructor(
     public firebaseService: FirebaseService,
@@ -21,7 +21,7 @@ export class EventsComponent implements OnInit {
     this.getData();
   }
   RowSelected(u: any) {
-    this.selectedEvent = u.payload.doc.id; // declare variable in component.
+    this.selectedEvent = u.payload.doc.id;   
     this.firebaseService.addEventGuest(this.selectedEvent);
 
   }
