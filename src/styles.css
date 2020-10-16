@@ -1,1 +1,4 @@
 @import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+fa-icon {
+  padding-right: 5px;
+}

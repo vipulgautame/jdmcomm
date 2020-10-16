@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+  <script src="https://use.fontawesome.com/c550f82849.js"></script>
   <title>JdmCommunity</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -23,27 +24,34 @@
     <app-header></app-header>
 
     <div class="row">
-      <div class="col-sm-2 p-3" style="min-width: 150px;">
+      <div class="col-sm-2 p-3" style="min-width: 150px; ">
         <div class="my-all-buttons">
           <button mat-raised-button class="btn btn-default btn-primary"
             onClick="window.open('//paypal.me/jdmcomm?locale.x=en_AU')">
+            <fa-icon [icon]="['fas', 'donate']"></fa-icon>
             Donate
           </button>
           <button mat-raised-button class="btn btn-default btn-primary" onClick="window.open('//google.com')">
-            XMembrshpX
+            <fa-icon [icon]="['fas', 'user-shield']"></fa-icon>
+            Membrshp
           </button>
-          <button mat-raised-button class="btn btn-default btn-primary" onClick="window.open('//gmail.com')">
-            XEmailUsX
+          <button mat-raised-button class="btn btn-default btn-primary"
+            onClick="window.open('//mailto:webmaster@example.com')">
+            <fa-icon [icon]="['fas', 'envelope']"></fa-icon>
+            EmailUs
           </button>
           <button mat-raised-button class="btn btn-default btn-primary" onClick="window.open('//facebook.com')">
+            <fa-icon [icon]="['fab', 'facebook']"></fa-icon>
             Facebook
           </button>
           <button mat-raised-button class="btn btn-default btn-primary"
             onClick="window.open('//instagram.com/jdmmastersofficial/')">
+            <fa-icon [icon]="['fab', 'instagram']"></fa-icon>
             Instagram
           </button>
           <button mat-raised-button class="btn btn-default btn-primary"
             onClick="window.open('//youtube.com/c/JDMMasters/featured')">
+            <fa-icon [icon]="['fab', 'youtube']"></fa-icon>
             YouTube
           </button>
         </div>
@@ -52,7 +60,11 @@
         <router-outlet></router-outlet>
       </div>
       <div class="col-sm-2 p-3" style="min-width: 150px;">
-        <mat-card style="margin: 5px;"></mat-card>
+        <mat-card style="margin: 5px; min-height: 350px;">
+          Place your advert here!
+          <br>
+          contact admin
+        </mat-card>
       </div>
     </div>
   </div>

@@ -10,6 +10,13 @@ import { MaterialModule } from './material-module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
+import {
+  FontAwesomeModule,
+  FaIconLibrary,
+} from '@fortawesome/angular-fontawesome';
+import { fas } from '@fortawesome/free-solid-svg-icons';
+import { far } from '@fortawesome/free-regular-svg-icons';
+import { fab } from '@fortawesome/free-brands-svg-icons';
 
 import { Carousel1Component } from './carousel1/carousel1.component';
 import { Carousel2Component } from './carousel2/carousel2.component';
@@ -23,6 +30,7 @@ import { UserResolver } from './user/user.resolver';
 import { UserComponent } from './user/user.component';
 import { EventsComponent } from './events/events.component';
 import { AboutComponent } from './about/about.component';
+import { ChatComponent } from './chat/chat.component';
 
 @NgModule({
   declarations: [
@@ -33,8 +41,10 @@ import { AboutComponent } from './about/about.component';
     UserComponent,
     EventsComponent,
     AboutComponent,
+    ChatComponent,
   ],
   imports: [
+    FontAwesomeModule,
     MaterialModule,
     AngularFireAuthModule,
     MatFormFieldModule,
@@ -60,4 +70,8 @@ import { AboutComponent } from './about/about.component';
   ],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule {
+  constructor(library: FaIconLibrary) {
+    library.addIconPacks(fas, far, fab);
+  }
+}

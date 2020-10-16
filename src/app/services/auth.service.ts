@@ -1,14 +1,38 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import * as firebase from 'firebase/app';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
+import { Router } from '@angular/router';
+import {
+  AngularFirestore,
+  AngularFirestoreDocument,
+} from '@angular/fire/firestore';
+import { switchMap, first, map } from 'rxjs/operators';
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class AuthService {
-  user: Observable<firebase.User>;
-  constructor(public afAuth: AngularFireAuth) {
+  user: Observable<any>;
+  constructor(
+    public afAuth: AngularFireAuth,
+    private afs: AngularFirestore,
+    private router: Router
+  ) {
+    this.user = this.afAuth.authState.pipe(
+      switchMap((user) => {
+        if (user) {
+          return this.afs.doc<any>(`users/${user.uid}`).valueChanges();
+        } else {
+          return of(null);
+        }
+      })
+    );
     this.user = afAuth.authState;
   }
+
+  getUser() {
+    return this.user.pipe(first()).toPromise();
+  }
+
 
   doGoogleLogin() {
     return new Promise<any>((resolve, reject) => {
