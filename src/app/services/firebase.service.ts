@@ -25,6 +25,16 @@ export class FirebaseService {
     this.vip1 = "You are a Member of JDM Community"
     return this.vip1;
   }
+  removeMember() {
+    var docRef = this.db.collection("members").doc(firebase.auth().currentUser.email).ref.get()
+    docRef.then(docSnapshot => {
+      if (docSnapshot.exists) {
+        this.db.collection('members').doc(firebase.auth().currentUser.email).delete();
+      }
+    })
+    this.vip1 = "Membership cancelled"
+    return this.vip1;
+  }
 
   createEvent(value) {
     return this.db.collection('events').add({

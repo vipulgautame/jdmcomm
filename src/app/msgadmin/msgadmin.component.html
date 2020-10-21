@@ -1,0 +1,33 @@
+<h1 *ngIf="authService.user | async">
+    Welcome {{ (authService.user | async)?.email }}!
+</h1>
+<form [formGroup]="formGroup" *ngIf="authService.user | async">
+    <mat-form-field appearance="fill">
+        <mat-label>Event type</mat-label>
+        <mat-select formControlName="typeFormCtrl">
+            <mat-option *ngFor="let event of events" [value]="event.value" required>
+                {{ event.viewValue }}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+        <mat-label>Choose a Date</mat-label>
+        <input matInput [min]="minDate" [matDatepicker]="picker" formControlName="dateFormCtrl" required />
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+        <mat-label>number of Audience</mat-label>
+        <input matInput formControlName="capacityFormCtrl" placeholder="How many cars you can accomodate?" type="number"
+            required />
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+        <mat-label>Address</mat-label>
+        <input matInput formControlName="addressFormCtrl" placeholder="Ex. 1 Main St, New York, NY" required />
+    </mat-form-field>
+    <br>
+    <button type="submit" mat-raised-button class="btn-primary" (click)="onSubmit(formGroup.value)">Host!</button>
+</form>

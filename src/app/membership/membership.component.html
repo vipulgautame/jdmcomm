@@ -5,5 +5,10 @@
         Become member
     </button>
     {{vip1}}
+    <br>
+    <button mat-raised-button (click)="withdrawMember()" class="btn btn-primary" style="margin-top: 10px;">
+        <fa-icon [icon]="['fas', 'user-minus']"></fa-icon>
+        Cancel membership
+    </button>
 </div>
 <ng-template #elseBlock>Please sign-in to access membership</ng-template>

@@ -31,6 +31,7 @@ import { AboutComponent } from './about/about.component';
 import { ChatComponent } from './chat/chat.component';
 import { MembershipComponent } from './membership/membership.component';
 import { ShopComponent } from './shop/shop.component';
+import { MsgadminComponent } from './msgadmin/msgadmin.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { ShopComponent } from './shop/shop.component';
     ChatComponent,
     MembershipComponent,
     ShopComponent,
+    MsgadminComponent,
   ],
   imports: [
     FontAwesomeModule,

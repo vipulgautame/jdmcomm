@@ -24,7 +24,7 @@
     <app-header></app-header>
 
     <div class="row">
-      <div class="col-sm-2 p-3" style="min-width: 150px; ">
+      <div class="col-sm-2 p-3" style="min-width: 200px; ">
         <div class="my-all-buttons">
           <button mat-raised-button class="btn btn-default btn-primary" [routerLink]="['app-membership']"
             routerLinkActive="active">
@@ -36,10 +36,10 @@
             <fa-icon [icon]="['fas', 'donate']"></fa-icon>
             Donate
           </button>
-          <button mat-raised-button class="btn btn-default btn-primary"
-            onClick="window.open('//mailto:webmaster@example.com')">
+          <button mat-raised-button class="btn btn-default btn-primary" [routerLink]="['app-msgadmin']"
+            routerLinkActive="active">
             <fa-icon [icon]="['fas', 'envelope']"></fa-icon>
-            EmailUs
+            Contact admin
           </button>
           <button mat-raised-button class="btn btn-default btn-primary" onClick="window.open('//facebook.com')">
             <fa-icon [icon]="['fab', 'facebook']"></fa-icon>

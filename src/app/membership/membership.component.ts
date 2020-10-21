@@ -22,5 +22,10 @@ export class MembershipComponent implements OnInit {
   this.vip1 = this.firebaseService.addMember();
     
   }
+  withdrawMember() {
+    
+  this.vip1 = this.firebaseService.removeMember();
+    
+  }
 
 }

@@ -13,14 +13,14 @@ interface Event {
   value: string;
   viewValue: string;
 }
-
 @Component({
-  selector: 'page-user',
-  templateUrl: 'user.component.html',
-  styleUrls: ['user.component.css'],
+  selector: 'app-msgadmin',
+  templateUrl: './msgadmin.component.html',
+  styleUrls: ['./msgadmin.component.css']
 })
-export class UserComponent implements OnInit {
-  formDate: Date;
+export class MsgadminComponent implements OnInit {
+
+ formDate: Date;
   formGroup: FormGroup;
 
   events: Event[] = [
