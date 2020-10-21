@@ -5,6 +5,7 @@ import { ChatComponent } from '../chat/chat.component';
 import { EventsComponent } from '../events/events.component';
 import { MembershipComponent } from '../membership/membership.component';
 import { AuthGuard } from '../services/auth.guard';
+import { ShopComponent } from '../shop/shop.component';
 import { UserComponent } from '../user/user.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
@@ -18,7 +19,7 @@ const routes: Routes = [
   { path: 'reset-password', component: ResetPasswordComponent },
   { path: 'page-user', component: UserComponent },
   { path: 'app-membership', component: MembershipComponent },
-
+  { path: 'app-shop', component: ShopComponent },
   { path: '', component: EventsComponent },
   { path: 'chats/:id', component: ChatComponent, canActivate: [AuthGuard] }
 ];

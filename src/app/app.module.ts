@@ -30,6 +30,7 @@ import { EventsComponent } from './events/events.component';
 import { AboutComponent } from './about/about.component';
 import { ChatComponent } from './chat/chat.component';
 import { MembershipComponent } from './membership/membership.component';
+import { ShopComponent } from './shop/shop.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { MembershipComponent } from './membership/membership.component';
     AboutComponent,
     ChatComponent,
     MembershipComponent,
+    ShopComponent,
   ],
   imports: [
     FontAwesomeModule,

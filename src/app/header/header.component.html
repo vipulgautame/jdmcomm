@@ -37,6 +37,11 @@
           <fa-icon [icon]="['fas', 'address-card']"></fa-icon>ABOUT US
         </a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['app-shop']" routerLinkActive="active">
+          <fa-icon [icon]="['fas', 'shopping-cart']"></fa-icon>SHOP
+        </a>
+      </li>
       <li *ngIf="authService.user | async" class="nav-item">
         <a class="nav-link" routerLinkActive="active" (click)="logout()" style="cursor: pointer; color: red;">
           <fa-icon [icon]="['fas', 'sign-out-alt']"></fa-icon>LOGOUT
