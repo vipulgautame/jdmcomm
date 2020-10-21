@@ -1,4 +1,3 @@
-import { SelectionModel } from '@angular/cdk/collections';
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 import { FirebaseService } from '../services/firebase.service';

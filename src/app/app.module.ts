@@ -18,8 +18,6 @@ import { fas } from '@fortawesome/free-solid-svg-icons';
 import { far } from '@fortawesome/free-regular-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 
-import { Carousel1Component } from './carousel1/carousel1.component';
-import { Carousel2Component } from './carousel2/carousel2.component';
 import { AuthModule } from './auth/auth.module';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -31,17 +29,17 @@ import { UserComponent } from './user/user.component';
 import { EventsComponent } from './events/events.component';
 import { AboutComponent } from './about/about.component';
 import { ChatComponent } from './chat/chat.component';
+import { MembershipComponent } from './membership/membership.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    Carousel1Component,
-    Carousel2Component,
     UserComponent,
     EventsComponent,
     AboutComponent,
     ChatComponent,
+    MembershipComponent,
   ],
   imports: [
     FontAwesomeModule,

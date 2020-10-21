@@ -13,7 +13,7 @@
             <th>
                 capacity
             </th>
-            <th>
+            <th *ngIf="authService.user | async">
                 address
             </th>
             <th>
@@ -28,7 +28,7 @@
             <td>{{u.payload.doc.data().eventType}}</td>
             <td>{{u.payload.doc.data().date.toDate() | date:'dd LLLL yyyy'}}</td>
             <td>{{u.payload.doc.data().audienceCapacity}}</td>
-            <td>{{u.payload.doc.data().address}}</td>
+            <td *ngIf="authService.user | async">{{u.payload.doc.data().address}}</td>
             <td>{{(u.payload.doc.data().guestNames.length)-1}}</td>
             <td *ngIf="authService.user | async">
                 <button mat-raised-button class="btn-primary" (click)="RowSelected(u);">go</button>

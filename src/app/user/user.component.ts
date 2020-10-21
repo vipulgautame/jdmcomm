@@ -48,26 +48,14 @@ export class UserComponent implements OnInit {
 
   ngOnInit(): void {
     this.formGroup = this._formBuilder.group({
-      typeFormCtrl: [''],
-      dateFormCtrl: [''],
-      capacityFormCtrl: [''],
-      addressFormCtrl: [''],
+      typeFormCtrl: ['', Validators.required],
+      dateFormCtrl: ['', Validators.required],
+      capacityFormCtrl: ['', Validators.required],
+      addressFormCtrl: ['', Validators.required],
       guestNames: [''],
     });
   }
 
-  /* hostEventToggle() {
-    var x = document.getElementById('eventForm');
-    var y = document.getElementById('eventFormButton');
-    if (x.style.display === 'none') {
-      x.style.display = 'block';
-      y.style.display = 'block';
-    } else {
-      x.style.display = 'none';
-      y.style.display = 'none';
-    }
-  }
-*/
   logout() {
     this.authService.doLogout().then(
       (res) => {

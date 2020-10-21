@@ -11,24 +11,36 @@
       <li class="nav-item" *ngIf="authService.user | async; else elseRegister">
       </li>
       <ng-template #elseRegister>
-        <a class="nav-link" [routerLink]="['register']" routerLinkActive="active">REGISTER</a>
+        <a class="nav-link" [routerLink]="['register']" routerLinkActive="active">
+          <fa-icon [icon]="['fas', 'user-plus']"></fa-icon>REGISTER
+        </a>
       </ng-template>
       <li class="nav-item" *ngIf="authService.user | async; else elseLogin">
       </li>
       <ng-template #elseLogin>
-        <a class="nav-link" [routerLink]="['login']" routerLinkActive="active">LOGIN</a>
+        <a class="nav-link" [routerLink]="['login']" routerLinkActive="active">
+          <fa-icon [icon]="['fas', 'sign-in-alt']"></fa-icon>LOGIN
+        </a>
       </ng-template>
       <li class="nav-item">
-        <a class="nav-link" [routerLink]="['events']" routerLinkActive="active">EVENTS</a>
+        <a class="nav-link" [routerLink]="['events']" routerLinkActive="active">
+          <fa-icon [icon]="['fas', 'map-marker-alt']"></fa-icon>EVENTS
+        </a>
       </li>
       <li *ngIf="authService.user | async" class="nav-item">
-        <a class="nav-link" [routerLink]="['page-user']" routerLinkActive="active">HOST AN EVENT</a>
+        <a class="nav-link" [routerLink]="['page-user']" routerLinkActive="active">
+          <fa-icon [icon]="['fas', 'fire']"></fa-icon>HOST AN EVENT
+        </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" [routerLink]="['about']" routerLinkActive="active">ABOUT US</a>
+        <a class="nav-link" [routerLink]="['about']" routerLinkActive="active">
+          <fa-icon [icon]="['fas', 'address-card']"></fa-icon>ABOUT US
+        </a>
       </li>
       <li *ngIf="authService.user | async" class="nav-item">
-        <a class="nav-link" routerLinkActive="active" (click)="logout()" style="cursor: pointer; color: red;">LOGOUT</a>
+        <a class="nav-link" routerLinkActive="active" (click)="logout()" style="cursor: pointer; color: red;">
+          <fa-icon [icon]="['fas', 'sign-out-alt']"></fa-icon>LOGOUT
+        </a>
       </li>
     </ul>
   </div>

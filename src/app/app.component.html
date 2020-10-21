@@ -26,14 +26,15 @@
     <div class="row">
       <div class="col-sm-2 p-3" style="min-width: 150px; ">
         <div class="my-all-buttons">
+          <button mat-raised-button class="btn btn-default btn-primary" [routerLink]="['app-membership']"
+            routerLinkActive="active">
+            <fa-icon [icon]="['fas', 'user-shield']"></fa-icon>
+            Membrshp
+          </button>
           <button mat-raised-button class="btn btn-default btn-primary"
             onClick="window.open('//paypal.me/jdmcomm?locale.x=en_AU')">
             <fa-icon [icon]="['fas', 'donate']"></fa-icon>
             Donate
-          </button>
-          <button mat-raised-button class="btn btn-default btn-primary" onClick="window.open('//google.com')">
-            <fa-icon [icon]="['fas', 'user-shield']"></fa-icon>
-            Membrshp
           </button>
           <button mat-raised-button class="btn btn-default btn-primary"
             onClick="window.open('//mailto:webmaster@example.com')">

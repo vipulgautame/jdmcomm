@@ -20,7 +20,8 @@
   <br>
   <mat-form-field>
     <mat-label>number of Audience</mat-label>
-    <input matInput formControlName="capacityFormCtrl" placeholder="How many cars you can accomodate?" type="number" />
+    <input matInput formControlName="capacityFormCtrl" placeholder="How many cars you can accomodate?" type="number"
+      required />
   </mat-form-field>
   <br>
   <mat-form-field>
@@ -28,5 +29,5 @@
     <input matInput formControlName="addressFormCtrl" placeholder="Ex. 1 Main St, New York, NY" required />
   </mat-form-field>
   <br>
+  <button type="submit" mat-raised-button class="btn-primary" (click)="onSubmit(formGroup.value)">Host!</button>
 </form>
-<button mat-raised-button class="btn-primary" (click)="onSubmit(formGroup.value)">Host!</button>

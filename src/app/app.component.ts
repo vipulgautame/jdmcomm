@@ -8,8 +8,9 @@ import { ChatService } from './services/chat.service';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit{
+
   userChats$;
-  title = 'jdm';
+  title = 'jdm community portal';
   constructor(public auth: AuthService, public cs: ChatService) {}
   ngOnInit() {
     this.userChats$ = this.cs.getUserChats();

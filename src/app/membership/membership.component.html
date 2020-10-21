@@ -1,0 +1,9 @@
+<h1>Become member of JDM Community and get discounts on our merchandise!</h1>
+<div *ngIf="authService.user | async; else elseBlock">
+    <button mat-raised-button (click)="becomeMember()" class="btn btn-primary">
+        <fa-icon [icon]="['fas', 'user-shield']"></fa-icon>
+        Become member
+    </button>
+    {{vip1}}
+</div>
+<ng-template #elseBlock>Please sign-in to access membership</ng-template>
