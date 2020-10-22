@@ -32,6 +32,8 @@ import { ChatComponent } from './chat/chat.component';
 import { MembershipComponent } from './membership/membership.component';
 import { ShopComponent } from './shop/shop.component';
 import { MsgadminComponent } from './msgadmin/msgadmin.component';
+import { BroadcastComponent } from './broadcast/broadcast.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -44,8 +46,10 @@ import { MsgadminComponent } from './msgadmin/msgadmin.component';
     MembershipComponent,
     ShopComponent,
     MsgadminComponent,
+    BroadcastComponent,
   ],
   imports: [
+    CommonModule,
     FontAwesomeModule,
     MaterialModule,
     AngularFireAuthModule,

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AboutComponent } from '../about/about.component';
+import { BroadcastComponent } from '../broadcast/broadcast.component';
 import { ChatComponent } from '../chat/chat.component';
 import { EventsComponent } from '../events/events.component';
 import { MembershipComponent } from '../membership/membership.component';
@@ -22,6 +23,7 @@ const routes: Routes = [
   { path: 'app-membership', component: MembershipComponent },
   { path: 'app-shop', component: ShopComponent },
   { path: 'app-msgadmin', component: MsgadminComponent },
+  { path: 'app-broadcast', component: BroadcastComponent },
   { path: '', component: EventsComponent },
   { path: 'chats/:id', component: ChatComponent, canActivate: [AuthGuard] }
 ];

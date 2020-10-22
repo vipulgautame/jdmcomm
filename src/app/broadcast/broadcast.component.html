@@ -1,0 +1,20 @@
+<h1 *ngIf="authService.user | async">
+    Welcome {{ (authService.user | async)?.email }}!
+</h1>
+<table class="table table-hover " style="background-color: transparent;">
+    <thead>
+        <tr>
+            <th>
+                name
+            </th>
+            <th>
+                message
+            </th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let u of allMsg; let i=index;">
+            <td>{{u.payload.doc.data().userName}}</td>
+            <td>{{u.payload.doc.data().userMsg}}</td>
+        </tr>
+    </tbody>
+</table>

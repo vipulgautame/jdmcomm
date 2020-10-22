@@ -15,6 +15,13 @@ export class FirebaseService {
   getEvents() {
     return this.db.collection('events').snapshotChanges();
   }
+  getMessages() {
+    return this.db.collection('chats').snapshotChanges();
+  }
+
+  getMembers() {
+    return this.db.collection('members').snapshotChanges();
+  }
 
   addEventGuest(selectedEvent) {
     return this.db.collection('events').doc(selectedEvent).update({ "guestNames": firebase.firestore.FieldValue.arrayUnion(firebase.auth().currentUser.email) });
@@ -43,6 +50,13 @@ export class FirebaseService {
       audienceCapacity: value.capacityFormCtrl,
       address: value.addressFormCtrl,
       guestNames: ['NONE'],
+    });
+  }
+
+  msgAdmin(value) {
+    return this.db.collection('chats').doc(firebase.auth().currentUser.email).set({
+      userName: value.nameFormCtrl,
+      userMsg: value.issueFormCtrl
     });
   }
 }
