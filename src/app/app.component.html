@@ -6,6 +6,7 @@
   <title>JdmCommunity</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -26,32 +27,27 @@
     <div class="row">
       <div class="col-sm-2 p-3" style="min-width: 200px; ">
         <div class="my-all-buttons">
-          <button mat-raised-button class="btn btn-default btn-primary" [routerLink]="['app-membership']"
-            routerLinkActive="active">
+          <button mat-raised-button class="btn btn-dark" [routerLink]="['app-membership']" routerLinkActive="active">
             <fa-icon [icon]="['fas', 'user-shield']"></fa-icon>
             Membrshp
           </button>
-          <button mat-raised-button class="btn btn-default btn-primary"
-            onClick="window.open('//paypal.me/jdmcomm?locale.x=en_AU')">
+          <button mat-raised-button class="btn btn-dark" onClick="window.open('//paypal.me/jdmcomm?locale.x=en_AU')">
             <fa-icon [icon]="['fas', 'donate']"></fa-icon>
             Donate
           </button>
-          <button mat-raised-button class="btn btn-default btn-primary" [routerLink]="['app-msgadmin']"
-            routerLinkActive="active">
+          <button mat-raised-button class="btn btn-dark" [routerLink]="['app-msgadmin']" routerLinkActive="active">
             <fa-icon [icon]="['fas', 'bullhorn']"></fa-icon>
             Send Bcast
           </button>
-          <button mat-raised-button class="btn btn-default btn-primary" onClick="window.open('//facebook.com')">
+          <button mat-raised-button class="btn btn-dark" onClick="window.open('//facebook.com')">
             <fa-icon [icon]="['fab', 'facebook']"></fa-icon>
             Facebook
           </button>
-          <button mat-raised-button class="btn btn-default btn-primary"
-            onClick="window.open('//instagram.com/jdmmastersofficial/')">
+          <button mat-raised-button class="btn btn-dark" onClick="window.open('//instagram.com/jdmmastersofficial/')">
             <fa-icon [icon]="['fab', 'instagram']"></fa-icon>
             Instagram
           </button>
-          <button mat-raised-button class="btn btn-default btn-primary"
-            onClick="window.open('//youtube.com/c/JDMMasters/featured')">
+          <button mat-raised-button class="btn btn-dark" onClick="window.open('//youtube.com/c/JDMMasters/featured')">
             <fa-icon [icon]="['fab', 'youtube']"></fa-icon>
             YouTube
           </button>
@@ -68,7 +64,7 @@
         </mat-card>
       </div>
     </div>
-
+    <app-footer></app-footer>
   </div>
 </body>
 

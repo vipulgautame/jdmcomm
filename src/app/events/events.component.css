@@ -1,11 +1,23 @@
 table {
+  color: white;
   border: none;
   display: block;
   overflow: auto;
 }
-table th {
+table td,
+th {
+  border: 0px;
   padding: 10px;
 }
-table td {
-  padding: 10px;
+table tr:hover {
+  color: rgb(247, 199, 255);
+}
+h1 {
+  font-family: "Nunito", sans-serif;
+}
+button {
+  font-family: "Nunito", sans-serif;
+}
+.btn:hover {
+  background-color: #660033;
 }

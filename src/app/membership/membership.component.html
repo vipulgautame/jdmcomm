@@ -1,12 +1,12 @@
 <h1>Become member of JDM Community and get discounts on our merchandise!</h1>
 <div *ngIf="authService.user | async; else elseBlock">
-    <button mat-raised-button (click)="becomeMember()" class="btn btn-primary">
+    <button mat-raised-button (click)="becomeMember()" class="btn btn-dark">
         <fa-icon [icon]="['fas', 'user-shield']"></fa-icon>
         Become member
     </button>
     {{vip1}}
     <br>
-    <button mat-raised-button (click)="withdrawMember()" class="btn btn-primary" style="margin-top: 10px;">
+    <button mat-raised-button (click)="withdrawMember()" class="btn btn-dark" style="margin-top: 10px;">
         <fa-icon [icon]="['fas', 'user-minus']"></fa-icon>
         Cancel membership
     </button>

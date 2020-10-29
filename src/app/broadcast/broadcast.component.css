@@ -1,0 +1,13 @@
+table tr:hover {
+  color: rgb(247, 199, 255);
+}
+table td,
+th {
+  border: 0px;
+}
+table {
+  color: white;
+  border: none;
+  display: block;
+  overflow: auto;
+}

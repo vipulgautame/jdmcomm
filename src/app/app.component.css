@@ -1,6 +1,9 @@
 body {
   min-height: 101vh;
+  background-color: rgb(48, 48, 48);
+  font-family: "Nunito", sans-serif;
 }
+
 .my-all-buttons .mat-raised-button {
   width: 100%;
   margin: 5px;
@@ -20,6 +23,7 @@ body {
   text-shadow: 5px 5px 4px #444444;
   position: relative;
   color: rgb(255, 255, 255);
+  font-family: "Nunito", sans-serif;
 }
 .webLogo {
   max-width: 200px;
@@ -30,5 +34,16 @@ body {
   line-height: 0.8;
   font-size: 30px;
   color: white;
-  text-shadow: 2px 2px 2px black;
+  text-shadow: 2px 2px 4px black, -2px -2px 4px black, 2px -2px 4px black,
+    -2px 2px 4px black;
+  font-family: "Nunito", sans-serif;
+}
+button {
+  font-family: "Nunito", sans-serif;
+}
+.btn:hover {
+  background-color: #660033;
+}
+mat-card {
+  font-family: "Nunito", sans-serif;
 }

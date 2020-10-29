@@ -34,6 +34,7 @@ import { ShopComponent } from './shop/shop.component';
 import { MsgadminComponent } from './msgadmin/msgadmin.component';
 import { BroadcastComponent } from './broadcast/broadcast.component';
 import { CommonModule } from '@angular/common';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { CommonModule } from '@angular/common';
     ShopComponent,
     MsgadminComponent,
     BroadcastComponent,
+    FooterComponent,
   ],
   imports: [
     CommonModule,

@@ -1,4 +1,11 @@
-@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+@import "~@angular/material/prebuilt-themes/purple-green.css";
 fa-icon {
   padding-right: 5px;
+}
+
+body {
+  font-family: "Nunito-Regular", sans-serif;
+}
+h1 {
+  font-family: "Nunito-Regular", sans-serif;
 }

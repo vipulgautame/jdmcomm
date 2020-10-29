@@ -10,3 +10,15 @@
 .mat-form-field {
   margin-top: 5px;
 }
+button {
+  font-family: "Nunito", sans-serif;
+}
+.btn:hover {
+  background-color: #660033;
+}
+h1 {
+  font-family: "Nunito", sans-serif;
+}
+mat-form-field {
+  font-family: "Nunito", sans-serif;
+}
