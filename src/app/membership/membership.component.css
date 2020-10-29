@@ -1,8 +1,12 @@
 button {
   font-family: "Nunito", sans-serif;
   background-color: #005266;
+  transition: 0.5s;
 }
-
+button:hover {
+  border-radius: 20px;
+  background-color: black;
+}
 h1 {
   font-family: "Nunito", sans-serif;
 }

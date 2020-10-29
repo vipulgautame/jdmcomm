@@ -11,3 +11,6 @@ table {
   display: block;
   overflow: auto;
 }
+h1 {
+  font-family: "Nunito", sans-serif;
+}

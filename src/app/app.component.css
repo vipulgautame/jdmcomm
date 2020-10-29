@@ -41,8 +41,22 @@ body {
 button {
   font-family: "Nunito", sans-serif;
   background-color: #005266;
+  transition: 0.5s;
+}
+button:hover {
+  border-radius: 20px;
+  background-color: black;
 }
 
 mat-card {
   font-family: "Nunito", sans-serif;
+}
+
+.row {
+  padding: 5px;
+}
+
+.footer {
+  margin-left: 10px;
+  width: 100%;
 }

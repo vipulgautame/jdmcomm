@@ -1,20 +1,18 @@
-html {
-  color: white;
-  font-family: "Nunito", sans-serif;
-}
 h2,
 h3 {
   font-family: "Nunito", sans-serif;
 }
-.footer {
+.row {
+  color: white;
+  font-family: "Nunito", sans-serif;
   padding: 10px;
   width: 100%;
-  position: relative;
   height: auto;
   background-color: #005266;
 }
-.footer .col {
-  width: 190px;
+.row .col-sm-2,
+.row .col-sm-4 {
+  min-width: 200px;
   height: auto;
   float: left;
   box-sizing: border-box;
@@ -23,61 +21,19 @@ h3 {
   padding: 0px 20px 20px 20px;
 }
 
-.footer .col ul {
+.row .col-sm-2 ul,
+.row .col-sm-4 ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
-}
-.footer .col ul li {
-  padding: 5px 0px 5px 0px;
-  cursor: pointer;
-  transition: 0.2s;
-  -webkit-transition: 0.2s;
-  -moz-transition: 0.2s;
-}
-.social ul li {
-  padding-right: 5px !important;
-  list-style-type: none;
+  transition: 0.5s;
 }
 
-.footer .col ul li:hover {
-  transition: 0.1s;
-  -webkit-transition: 0.1s;
-  -moz-transition: 0.1s;
+a:hover {
+  color: #7ce5ff;
+  text-decoration: none;
 }
-.clearfix {
-  clear: both;
-}
-.footer .social {
-  font-size: x-large;
-}
-@media only screen and (min-width: 1280px) {
-  .contain {
-    width: 1200px;
-    margin: 0 auto;
-  }
-}
-@media only screen and (max-width: 1139px) {
-  .contain .social {
-    width: 1000px;
-    display: block;
-  }
-  .social h1 {
-    margin: 0px;
-  }
-}
-@media only screen and (max-width: 950px) {
-  .footer .col {
-    width: 33%;
-  }
-}
-@media only screen and (max-width: 500px) {
-  .footer .col {
-    width: 50%;
-  }
-}
-@media only screen and (max-width: 340px) {
-  .footer .col {
-    width: 100%;
-  }
+a {
+  transition: 0.5s;
+  color: white;
 }

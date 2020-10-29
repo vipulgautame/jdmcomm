@@ -29,14 +29,14 @@ export class LoginComponent {
 
   tryGoogleLogin() {
     this.authService.doGoogleLogin().then((res) => {
-      this.router.navigate(['page-user']);
+      this.router.navigate(['events']);
     });
   }
 
   tryLogin(value) {
     this.authService.doLogin(value).then(
       (res) => {
-        this.router.navigate(['page-user']);
+        this.router.navigate(['events']);
       },
       (err) => {
         console.log(err);
