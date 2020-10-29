@@ -10,14 +10,12 @@ th {
   padding: 10px;
 }
 table tr:hover {
-  color: rgb(247, 199, 255);
+  color: #89e7ff;
 }
 h1 {
   font-family: "Nunito", sans-serif;
 }
 button {
   font-family: "Nunito", sans-serif;
-}
-.btn:hover {
-  background-color: #660033;
+  background-color: #005266;
 }

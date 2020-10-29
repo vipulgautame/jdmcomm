@@ -2,7 +2,7 @@ html {
   color: white;
   font-family: "Nunito", sans-serif;
 }
-h1,
+h2,
 h3 {
   font-family: "Nunito", sans-serif;
 }
@@ -11,7 +11,7 @@ h3 {
   width: 100%;
   position: relative;
   height: auto;
-  background-color: #660033;
+  background-color: #005266;
 }
 .footer .col {
   width: 190px;

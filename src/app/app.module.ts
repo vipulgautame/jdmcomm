@@ -4,8 +4,6 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
 import { AngularFireAuthModule } from '@angular/fire/auth';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatButtonModule } from '@angular/material/button';
 import { MaterialModule } from './material-module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -28,7 +26,6 @@ import { UserResolver } from './user/user.resolver';
 import { UserComponent } from './user/user.component';
 import { EventsComponent } from './events/events.component';
 import { AboutComponent } from './about/about.component';
-import { ChatComponent } from './chat/chat.component';
 import { MembershipComponent } from './membership/membership.component';
 import { ShopComponent } from './shop/shop.component';
 import { MsgadminComponent } from './msgadmin/msgadmin.component';
@@ -43,7 +40,6 @@ import { FooterComponent } from './footer/footer.component';
     UserComponent,
     EventsComponent,
     AboutComponent,
-    ChatComponent,
     MembershipComponent,
     ShopComponent,
     MsgadminComponent,
@@ -55,8 +51,6 @@ import { FooterComponent } from './footer/footer.component';
     FontAwesomeModule,
     MaterialModule,
     AngularFireAuthModule,
-    MatFormFieldModule,
-    MatButtonModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     ReactiveFormsModule,
@@ -69,8 +63,6 @@ import { FooterComponent } from './footer/footer.component';
 
   providers: [
     MaterialModule,
-    MatFormFieldModule,
-    MatButtonModule,
     AuthService,
     UserService,
     UserResolver,

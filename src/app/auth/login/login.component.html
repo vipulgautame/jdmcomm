@@ -14,7 +14,7 @@
           <mat-label class="error">{{ errorMessage }}</mat-label>
         </mat-form-field>
         <br>
-        <button mat-raised-button type="submit" (click)="tryLogin(loginForm.value)" class="btn btn-primary">
+        <button mat-raised-button type="submit" (click)="tryLogin(loginForm.value)" class="btn btn-dark">
           <fa-icon [icon]="['fas', 'sign-in-alt']"></fa-icon>
           Login
         </button>
@@ -23,7 +23,7 @@
   </div>
   <div class="row">
     <div class="col-md-4 col-md-offset-4">
-      <button mat-raised-button type="button" class="btn btn-danger" (click)="tryGoogleLogin()">
+      <button mat-raised-button type="button" class="btn btn-dark" (click)="tryGoogleLogin()">
         <fa-icon [icon]="['fab', 'google']"></fa-icon>
         Login with Google
       </button>

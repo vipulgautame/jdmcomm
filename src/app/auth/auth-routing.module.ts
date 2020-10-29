@@ -2,11 +2,9 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AboutComponent } from '../about/about.component';
 import { BroadcastComponent } from '../broadcast/broadcast.component';
-import { ChatComponent } from '../chat/chat.component';
 import { EventsComponent } from '../events/events.component';
 import { MembershipComponent } from '../membership/membership.component';
 import { MsgadminComponent } from '../msgadmin/msgadmin.component';
-import { AuthGuard } from '../services/auth.guard';
 import { ShopComponent } from '../shop/shop.component';
 import { UserComponent } from '../user/user.component';
 import { LoginComponent } from './login/login.component';
@@ -25,7 +23,6 @@ const routes: Routes = [
   { path: 'app-msgadmin', component: MsgadminComponent },
   { path: 'app-broadcast', component: BroadcastComponent },
   { path: '', component: EventsComponent },
-  { path: 'chats/:id', component: ChatComponent, canActivate: [AuthGuard] }
 ];
 
 @NgModule({
