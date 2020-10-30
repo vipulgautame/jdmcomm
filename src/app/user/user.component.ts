@@ -19,9 +19,11 @@ interface Event {
   templateUrl: 'user.component.html',
   styleUrls: ['user.component.css'],
 })
-export class UserComponent implements OnInit {
+export class UserComponent {
   formDate: Date;
   formGroup: FormGroup;
+  errorMessage: string = '';
+
 
   events: Event[] = [
     { value: 'car-meet', viewValue: 'Car meet' },
@@ -41,10 +43,11 @@ export class UserComponent implements OnInit {
     private _formBuilder: FormBuilder,
     public firebaseService: FirebaseService
   ) {
-    this.minDate = new Date();
+      this.createForm();
+      this.minDate = new Date();
   }
 
-  ngOnInit(): void {
+  createForm() {
     this.formGroup = this._formBuilder.group({
       typeFormCtrl: ['', Validators.required],
       dateFormCtrl: ['', Validators.required],
@@ -78,6 +81,9 @@ export class UserComponent implements OnInit {
     this.firebaseService.createEvent(value).then((res) => {
       this.resetFields();
       this.router.navigate(['events']);
-    });
+    },(err) => {
+        console.log(err);
+        this.errorMessage = err.message;
+      });
   }
 }

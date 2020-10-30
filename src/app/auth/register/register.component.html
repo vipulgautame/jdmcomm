@@ -15,7 +15,8 @@
           <mat-label class="success">{{ successMessage }}</mat-label>
         </mat-form-field>
         <br>
-        <button mat-raised-button type="submit" (click)="tryRegister(registerForm.value)" class="btn btn-dark">
+        <button mat-raised-button type="submit" [disabled]="registerForm.invalid"
+          (click)="tryRegister(registerForm.value)" class="btn btn-dark">
           <fa-icon [icon]="['fas', 'user-plus']"></fa-icon>
 
           Register

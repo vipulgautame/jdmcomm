@@ -15,5 +15,6 @@
             required />
     </mat-form-field>
     <br>
-    <button type="submit" mat-raised-button class="btn btn-dark" (click)="onSubmit(formGroup.value)">Send</button>
+    <button type="submit" [disabled]="formGroup.invalid" mat-raised-button class="btn btn-dark"
+        (click)="onSubmit(formGroup.value)">Send</button>
 </form>

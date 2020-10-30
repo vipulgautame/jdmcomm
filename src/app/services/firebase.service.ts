@@ -44,12 +44,27 @@ export class FirebaseService {
   }
 
   createEvent(value) {
-    return this.db.collection('events').add({
+    // return this.db.collection('events').add({
+    //   eventType: value.typeFormCtrl,
+    //   date: value.dateFormCtrl,
+    //   audienceCapacity: value.capacityFormCtrl,
+    //   address: value.addressFormCtrl,
+    //   guestNames: ['NONE'],
+    // });
+
+    return new Promise<any>((resolve, reject) => {
+      this.db.collection('events').add({
       eventType: value.typeFormCtrl,
       date: value.dateFormCtrl,
       audienceCapacity: value.capacityFormCtrl,
       address: value.addressFormCtrl,
       guestNames: ['NONE'],
+    }).then(
+          (res) => {
+            resolve(res);
+          },
+          (err) => reject(err)
+        );
     });
   }
 
