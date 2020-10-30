@@ -60,3 +60,38 @@ mat-card {
   margin-left: 10px;
   width: 100%;
 }
+.cb-slideshow {
+  margin-top: 5px;
+  background-image: url("../assets/advert1.jpg");
+  height: 350px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  animation-name: example;
+  animation-duration: 12s;
+  animation-iteration-count: infinite;
+}
+@keyframes example {
+  0% {
+    background-image: url("../assets/advert1.jpg");
+  }
+  13% {
+    background-image: url("../assets/advert2.jpg");
+  }
+  33% {
+    background-image: url("../assets/advert2.jpg");
+  }
+  43% {
+    background-image: url("../assets/advert3.jpg");
+  }
+  66% {
+    background-image: url("../assets/advert3.jpg");
+  }
+  76% {
+    background-image: url("../assets/advert1.jpg");
+  }
+  100% {
+    background-image: url("../assets/advert1.jpg");
+  }
+}
